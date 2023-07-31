@@ -1,0 +1,21 @@
+{
+  "require": {
+    "ext-curl": "*",
+    "ext-dom": "*",
+    "phpoffice/phpspreadsheet": "^1.29",
+    "sunra/php-simple-html-dom-parser": "^1.5",
+    "ext-libxml": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\": "modules/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "8.2"
+    }
+  }
+}
