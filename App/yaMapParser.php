@@ -50,17 +50,5 @@ foreach ($data as $datum){
     $activeWorksheet->setCellValue('B'. $j++, $datum['description']);
 }
 
-// Output the result
-print_r($data);
-
-
-//$i = 1;
-//foreach ($elements as $element) {
-//    $description = $element->nodeValue;
-//    var_dump($description);
-//    $activeWorksheet->setCellValue('A'. $i++, $description);
-//    $activeWorksheet->setCellValue('A'. $i++, "");
-//}
-
 $writer = new Xlsx($spreadsheet);
-$writer->save(__DIR__ . 'test.xlsx');
+$writer->save(__DIR__ . 'parsed.xlsx');
