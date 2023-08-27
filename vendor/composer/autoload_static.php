@@ -11,10 +11,6 @@ class ComposerStaticInit9f6aac1641a4b3244ed5df232835c22b
     );
 
     public static $prefixLengthsPsr4 = array (
-        'm' => 
-        array (
-            'modules\\' => 8,
-        ),
         'Z' => 
         array (
             'ZipStream\\' => 10,
@@ -34,13 +30,13 @@ class ComposerStaticInit9f6aac1641a4b3244ed5df232835c22b
         array (
             'Complex\\' => 8,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'modules\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/modules',
-        ),
         'ZipStream\\' => 
         array (
             0 => __DIR__ . '/..' . '/maennchen/zipstream-php/src',
@@ -70,6 +66,10 @@ class ComposerStaticInit9f6aac1641a4b3244ed5df232835c22b
         array (
             0 => __DIR__ . '/..' . '/markbaker/complex/classes/src',
         ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/App',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -90,6 +90,8 @@ class ComposerStaticInit9f6aac1641a4b3244ed5df232835c22b
     );
 
     public static $classMap = array (
+        'App\\DataProcessing\\DataProcessing' => __DIR__ . '/../..' . '/App/DataProcessing/DataProcessing.php',
+        'App\\SpreadsheetWriter\\SpreadsheetWriter' => __DIR__ . '/../..' . '/App/SpreadsheetWriter/SpreadsheetWriter.php',
         'Complex\\Complex' => __DIR__ . '/..' . '/markbaker/complex/classes/src/Complex.php',
         'Complex\\Exception' => __DIR__ . '/..' . '/markbaker/complex/classes/src/Exception.php',
         'Complex\\Functions' => __DIR__ . '/..' . '/markbaker/complex/classes/src/Functions.php',

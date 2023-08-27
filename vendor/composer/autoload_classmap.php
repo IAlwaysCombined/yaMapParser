@@ -6,6 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\DataProcessing\\DataProcessing' => $baseDir . '/App/DataProcessing/DataProcessing.php',
+    'App\\SpreadsheetWriter\\SpreadsheetWriter' => $baseDir . '/App/SpreadsheetWriter/SpreadsheetWriter.php',
     'Complex\\Complex' => $vendorDir . '/markbaker/complex/classes/src/Complex.php',
     'Complex\\Exception' => $vendorDir . '/markbaker/complex/classes/src/Exception.php',
     'Complex\\Functions' => $vendorDir . '/markbaker/complex/classes/src/Functions.php',
