@@ -20,15 +20,15 @@ class SpreadsheetWriter
 
     public function writeToSpreadsheet(array $data): void
     {
-        $j = 2; // Starting row index for data
-
-        foreach ($data as $datum) {
-            $this->activeWorksheet->setCellValue('A' . $j, $datum['title']);
-            $this->activeWorksheet->setCellValue('B' . $j, $datum['description']);
-            $this->activeWorksheet->setCellValue('C' . $j, $datum['phone_numbers']);
-            $this->activeWorksheet->setCellValue('D' . $j, $datum['email_addresses']);
-            $this->activeWorksheet->setCellValue('E' . $j, $datum['source']); // Добавляем ссылку в ячейку E
-            $j++;
+        if (!empty($data)){
+            $i = 1;
+            foreach ($data as $item) {
+                $this->activeWorksheet->setCellValue('A'.$i, $item['latitude']);
+                $this->activeWorksheet->setCellValue('B'.$i, $item['longitude']);
+                $this->activeWorksheet->setCellValue('C'.$i, $item['description']);
+                $this->activeWorksheet->setCellValue('D'.$i, $item['label']);
+                $i++;
+            }
         }
     }
 
