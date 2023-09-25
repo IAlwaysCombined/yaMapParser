@@ -23,15 +23,19 @@ class DataProcessing
         if (preg_match('/<script.*?type=["\']application\/json["\'].*?>(.*?)<\/script>/is', $text, $matches)) {
             $jsonContent = $matches[1];
 
-            $infoArray = json_encode($jsonContent);
+            $arrayContent = json_decode($jsonContent);
 
-            $mapObjects = $infoArray['config']['userMap']['features'];
+            $features = $arrayContent->config->userMap->features;
 
-            foreach ($mapObjects as $object){
-                $data['latitude'] = $object['coordinates'][0];
-                $data['longitude'] = $object['coordinates'][1];
-                $data['description'] = $object['subtitle'];
-                $data['label'] = $object['title'];
+            foreach ($features as $feature) {
+                if (!empty($feature->coordinates)) {
+                    $data[] = [
+                        'latitude' => $feature->coordinates[1],
+                        'longitude' => $feature->coordinates[0],
+                        'description' => $feature->subtitle,
+                        'label' => $feature->title,
+                    ];
+                }
             }
         }
 

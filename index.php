@@ -19,6 +19,8 @@ foreach ($urls as $url) {
     $processor = new DataProcessing($url);
     $data = $processor->processData();
     $writer->writeToSpreadsheet($data);
+
+    sleep(10);
 }
 
 try {
